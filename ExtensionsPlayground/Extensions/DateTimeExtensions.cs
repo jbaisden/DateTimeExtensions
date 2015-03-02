@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Copyright 2015 Jason Baisden. See LICENSE.txt for licensing info.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,22 +8,6 @@ using System.Threading.Tasks;
 
 namespace ExtensionsPlayground.Extensions
 {
-
-    public interface DateCalcs
-    {
-        DateTime min { get; set; }
-        DateTime max { get; set; }
-
-        DateTime GetMinDate();
-        DateTime GetMaxDate();
-    }
-
-    //public abstract class AbDateCalc : DateCalcs
-    //{
-
-    //}
-
-
 
     public static class DateTimeExtensions
     {
