@@ -1,5 +1,6 @@
 ﻿// Copyright 2015 Jason Baisden. See LICENSE.txt for licensing info.
 
+using ExtensionsPlayground.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,16 @@ namespace ExtensionsPlayground.Extensions
 
     public static class DateTimeExtensions
     {
+
+        public static FluentDateTime IsWithIn(this DateTime date, FluentDateTime fdtParams)
+        {
+            fdtParams.BaseDate = date;
+            return fdtParams;
+        }
+
+
+
+
 
         public enum DateComparisonResult
         {
@@ -39,6 +50,14 @@ namespace ExtensionsPlayground.Extensions
             if (date.IsAfter(oldestDate) && date.IsBefore(nextOldest)) return true;
 
             return false;
+        }
+
+
+        public enum DateInterval
+        {
+            Days,
+            Months,
+            Years
         }
 
         public static bool IsDateWithinXRangeOfAnotherDate(this DateTime date, int interval, DateInterval dateInterval, DateTime comparisonDate)
@@ -78,11 +97,6 @@ namespace ExtensionsPlayground.Extensions
         }        
     }
 
-    public enum DateInterval
-    {
-        Days,
-        Months,
-        Years
-    }
+
 
 }
